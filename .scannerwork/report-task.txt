@@ -1,0 +1,6 @@
+projectKey=java-spring-sonar
+serverUrl=http://localhost:9000
+serverVersion=9.9.8.100196
+dashboardUrl=http://localhost:9000/dashboard?id=java-spring-sonar
+ceTaskId=AZgi0e7B-VuU-wL1ydmy
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AZgi0e7B-VuU-wL1ydmy
