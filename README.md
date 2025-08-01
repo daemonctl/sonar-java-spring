@@ -61,17 +61,17 @@ cd multi-module-java
 
 2. **Install dependencies:**
 ```bash
-./mvnw clean install
+mvn clean install
 ```
 
 3. **Run the application:**
 ```bash
-./mvnw spring-boot:run
+mvn spring-boot:run
 ```
 
 4. **Generate test coverage report:**
 ```bash
-./mvnw clean test jacoco:report
+mvn clean test jacoco:report
 ```
 
 The application will start running at `http://localhost:8080`.
@@ -143,7 +143,7 @@ The project is developed with high test coverage targets:
 
 ```bash
 # Generate test and coverage report
-./mvnw clean test jacoco:report
+mvn clean test jacoco:report
 
 # View the report
 open target/site/jacoco/index.html
@@ -164,7 +164,7 @@ docker run -d --name sonarqube -p 9000:9000 sonarqube:latest
 
 2. **Analyze the project**:
 ```bash
-./mvnw clean verify sonar:sonar
+mvn clean verify sonar:sonar
 ```
 
 3. **View results**: `http://localhost:9000`
@@ -221,13 +221,13 @@ multi-module-java/
 
 ```bash
 # Run all tests
-./mvnw test
+mvn test
 
 # Run a specific test class
-./mvnw test -Dtest=CalculatorTest
+mvn test -Dtest=CalculatorTest
 
 # Run tests with coverage
-./mvnw clean test jacoco:report
+mvn clean test jacoco:report
 ```
 
 ## 🔧 Development

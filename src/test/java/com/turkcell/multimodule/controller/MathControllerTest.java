@@ -25,7 +25,7 @@ class MathControllerTest {
     }
 
     @Test
-    @DisplayName("Toplama API testi")
+    @DisplayName("Adition API testing")
     void testAddAPI() {
         String url = createURLWithPort("/api/math/add?a=5.0&b=3.0");
         ResponseEntity<Double> response = restTemplate.getForEntity(url, Double.class);
@@ -35,7 +35,7 @@ class MathControllerTest {
     }
 
     @Test
-    @DisplayName("Çıkarma API testi")
+    @DisplayName("Subtraction API testing")
     void testSubtractAPI() {
         String url = createURLWithPort("/api/math/subtract?a=10.0&b=4.0");
         ResponseEntity<Double> response = restTemplate.getForEntity(url, Double.class);
@@ -45,7 +45,7 @@ class MathControllerTest {
     }
 
     @Test
-    @DisplayName("Çarpma API testi")
+    @DisplayName("Multiplication API testing")
     void testMultiplyAPI() {
         String url = createURLWithPort("/api/math/multiply?a=4.0&b=5.0");
         ResponseEntity<Double> response = restTemplate.getForEntity(url, Double.class);
@@ -55,7 +55,7 @@ class MathControllerTest {
     }
 
     @Test
-    @DisplayName("Bölme API testi - başarılı")
+    @DisplayName("Division API testing - success")
     void testDivideAPISuccess() {
         String url = createURLWithPort("/api/math/divide?a=15.0&b=3.0");
         ResponseEntity<Double> response = restTemplate.getForEntity(url, Double.class);
@@ -65,7 +65,7 @@ class MathControllerTest {
     }
 
     @Test
-    @DisplayName("Bölme API testi - sıfıra bölme hatası")
+    @DisplayName("Division API testing - error handling")
     void testDivideAPIError() {
         String url = createURLWithPort("/api/math/divide?a=10.0&b=0.0");
         ResponseEntity<Double> response = restTemplate.getForEntity(url, Double.class);
@@ -74,7 +74,7 @@ class MathControllerTest {
     }
 
     @Test
-    @DisplayName("Üs alma API testi")
+    @DisplayName("Power API testing")
     void testPowerAPI() {
         String url = createURLWithPort("/api/math/power?base=2.0&exponent=3.0");
         ResponseEntity<Double> response = restTemplate.getForEntity(url, Double.class);
@@ -84,7 +84,7 @@ class MathControllerTest {
     }
 
     @Test
-    @DisplayName("Faktöriyel API testi - başarılı")
+    @DisplayName("Factorial API testing - success")
     void testFactorialAPISuccess() {
         String url = createURLWithPort("/api/math/factorial?n=5");
         ResponseEntity<Long> response = restTemplate.getForEntity(url, Long.class);
@@ -94,7 +94,7 @@ class MathControllerTest {
     }
 
     @Test
-    @DisplayName("Faktöriyel API testi - negatif sayı hatası")
+    @DisplayName("Factorial API testing - negatif number error")
     void testFactorialAPIError() {
         String url = createURLWithPort("/api/math/factorial?n=-1");
         ResponseEntity<Long> response = restTemplate.getForEntity(url, Long.class);
@@ -103,7 +103,7 @@ class MathControllerTest {
     }
 
     @Test
-    @DisplayName("Daire alanı API testi - başarılı")
+    @DisplayName("Circke Area API testing - success")
     void testCircleAreaAPISuccess() {
         String url = createURLWithPort("/api/math/circle-area?radius=5.0");
         ResponseEntity<Double> response = restTemplate.getForEntity(url, Double.class);
@@ -113,7 +113,7 @@ class MathControllerTest {
     }
 
     @Test
-    @DisplayName("Daire alanı API testi - negatif yarıçap hatası")
+    @DisplayName("Circle Area API test- negatif radius error")
     void testCircleAreaAPIError() {
         String url = createURLWithPort("/api/math/circle-area?radius=-3.0");
         ResponseEntity<Double> response = restTemplate.getForEntity(url, Double.class);
@@ -122,7 +122,7 @@ class MathControllerTest {
     }
 
     @Test
-    @DisplayName("Dikdörtgen alanı API testi - başarılı")
+    @DisplayName("Rectangle Perimeter API testing - success")
     void testRectangleAreaAPISuccess() {
         String url = createURLWithPort("/api/math/rectangle-area?length=6.0&width=4.0");
         ResponseEntity<Double> response = restTemplate.getForEntity(url, Double.class);
@@ -132,7 +132,7 @@ class MathControllerTest {
     }
 
     @Test
-    @DisplayName("Dikdörtgen alanı API testi - negatif değer hatası")
+    @DisplayName("Rectangle Area API testing - negatif length or width error")
     void testRectangleAreaAPIError() {
         String url = createURLWithPort("/api/math/rectangle-area?length=-5.0&width=3.0");
         ResponseEntity<Double> response = restTemplate.getForEntity(url, Double.class);
@@ -141,7 +141,7 @@ class MathControllerTest {
     }
 
     @Test
-    @DisplayName("Mesafe API testi")
+    @DisplayName("Distance API testing")
     void testDistanceAPI() {
         String url = createURLWithPort("/api/math/distance?x1=0.0&y1=0.0&x2=3.0&y2=4.0");
         ResponseEntity<Double> response = restTemplate.getForEntity(url, Double.class);
@@ -151,7 +151,7 @@ class MathControllerTest {
     }
 
     @Test
-    @DisplayName("Asal sayı kontrolü API testi")
+    @DisplayName("Prime Number API testing")
     void testIsPrimeAPI() {
         // Asal sayı testi
         String url1 = createURLWithPort("/api/math/is-prime?number=7");

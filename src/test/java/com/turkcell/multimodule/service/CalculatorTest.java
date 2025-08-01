@@ -22,21 +22,21 @@ class CalculatorTest {
     }
 
     @Test
-    @DisplayName("Toplama işlemi - pozitif sayılar")
+    @DisplayName("Addition number test - positive numbers")
     void testAddPositiveNumbers() {
         assertEquals(8.0, calculator.add(3.0, 5.0));
         assertEquals(10.5, calculator.add(4.5, 6.0));
     }
 
     @Test
-    @DisplayName("Toplama işlemi - negatif sayılar")
+    @DisplayName("Addition testing - negatif number")
     void testAddNegativeNumbers() {
         assertEquals(-8.0, calculator.add(-3.0, -5.0));
         assertEquals(2.0, calculator.add(-3.0, 5.0));
     }
 
     @Test
-    @DisplayName("Toplama işlemi - sıfır ile")
+    @DisplayName("Addition testing - with zero number")
     void testAddWithZero() {
         assertEquals(5.0, calculator.add(0.0, 5.0));
         assertEquals(5.0, calculator.add(5.0, 0.0));
@@ -50,34 +50,34 @@ class CalculatorTest {
         "0, 5, -5",
         "-10, -5, -5"
     })
-    @DisplayName("Çıkarma işlemi - parameterized test")
+    @DisplayName("Substraction testing - parameterized test")
     void testSubtract(double a, double b, double expected) {
         assertEquals(expected, calculator.subtract(a, b));
     }
 
     @Test
-    @DisplayName("Çarpma işlemi - pozitif sayılar")
+    @DisplayName("Multiply testing - pozitif number")
     void testMultiplyPositiveNumbers() {
         assertEquals(15.0, calculator.multiply(3.0, 5.0));
         assertEquals(24.0, calculator.multiply(4.0, 6.0));
     }
 
     @Test
-    @DisplayName("Çarpma işlemi - negatif sayılar")
+    @DisplayName("Multiply testing - negatif number")
     void testMultiplyNegativeNumbers() {
         assertEquals(15.0, calculator.multiply(-3.0, -5.0));
         assertEquals(-15.0, calculator.multiply(-3.0, 5.0));
     }
 
     @Test
-    @DisplayName("Çarpma işlemi - sıfır ile")
+    @DisplayName("Multiply testing - divide by zero")
     void testMultiplyWithZero() {
         assertEquals(0.0, calculator.multiply(0.0, 5.0));
         assertEquals(0.0, calculator.multiply(5.0, 0.0));
     }
 
     @Test
-    @DisplayName("Bölme işlemi - normal durumlar")
+    @DisplayName("Divison testing - normal cases")
     void testDivideNormalCases() {
         assertEquals(2.0, calculator.divide(10.0, 5.0));
         assertEquals(2.5, calculator.divide(5.0, 2.0));
@@ -85,15 +85,15 @@ class CalculatorTest {
     }
 
     @Test
-    @DisplayName("Bölme işlemi - sıfıra bölme hatası")
+    @DisplayName("Divison testing - zero division error")
     void testDivideByZero() {
         Exception exception = assertThrows(IllegalArgumentException.class,
             () -> calculator.divide(10.0, 0.0));
-        assertEquals("Sıfıra bölme hatası!", exception.getMessage());
+        assertEquals("Zero divisation error!", exception.getMessage());
     }
 
     @Test
-    @DisplayName("Kare alma işlemi")
+    @DisplayName("Square testing")
     void testSquare() {
         assertEquals(25.0, calculator.square(5.0));
         assertEquals(16.0, calculator.square(-4.0));
@@ -102,7 +102,7 @@ class CalculatorTest {
     }
 
     @Test
-    @DisplayName("Karekök alma işlemi - pozitif sayılar")
+    @DisplayName("Sqrt positive numbers")
     void testSqrtPositiveNumbers() {
         assertEquals(5.0, calculator.sqrt(25.0));
         assertEquals(4.0, calculator.sqrt(16.0));
@@ -111,15 +111,15 @@ class CalculatorTest {
     }
 
     @Test
-    @DisplayName("Karekök alma işlemi - negatif sayı hatası")
+    @DisplayName("Sqrt negative number error")
     void testSqrtNegativeNumber() {
         Exception exception = assertThrows(IllegalArgumentException.class,
             () -> calculator.sqrt(-4.0));
-        assertEquals("Negatif sayının karekökü alınamaz!", exception.getMessage());
+        assertEquals("Negatif number cannot be square rooted!", exception.getMessage());
     }
 
     @Test
-    @DisplayName("Mutlak değer işlemi")
+    @DisplayName("Absolute value testing")
     void testAbsoluteValue() {
         assertEquals(5.0, calculator.abs(5.0));
         assertEquals(5.0, calculator.abs(-5.0));
@@ -135,21 +135,21 @@ class CalculatorTest {
         "4, 24",
         "3, 6"
     })
-    @DisplayName("Faktöriyel hesaplama - parameterized test")
+    @DisplayName("Factorial testing - parameterized test")
     void testFactorial(int input, long expected) {
         assertEquals(expected, calculator.factorial(input));
     }
 
     @Test
-    @DisplayName("Faktöriyel - negatif sayı hatası")
+    @DisplayName("Factorial - negatif number error")
     void testFactorialNegativeNumber() {
         Exception exception = assertThrows(IllegalArgumentException.class,
             () -> calculator.factorial(-1));
-        assertEquals("Negatif sayının faktöriyeli hesaplanamaz!", exception.getMessage());
+        assertEquals("Negatif number cannot have a factorial!", exception.getMessage());
     }
 
     @Test
-    @DisplayName("Üs alma işlemi")
+    @DisplayName("Power testing")
     void testPower() {
         assertEquals(8.0, calculator.power(2.0, 3.0));
         assertEquals(25.0, calculator.power(5.0, 2.0));
@@ -159,41 +159,41 @@ class CalculatorTest {
 
     @ParameterizedTest
     @ValueSource(ints = {2, 4, 6, 8, 10, 0, -2, -4})
-    @DisplayName("Çift sayı kontrolü - çift sayılar")
+    @DisplayName("Even number check - even number")
     void testIsEvenNumbers(int number) {
         assertTrue(calculator.isEven(number));
     }
 
     @ParameterizedTest
     @ValueSource(ints = {1, 3, 5, 7, 9, -1, -3})
-    @DisplayName("Tek sayı kontrolü")
+    @DisplayName("Odd number check - odd number")
     void testIsOddNumbers(int number) {
         assertFalse(calculator.isEven(number));
     }
 
     @ParameterizedTest
     @ValueSource(ints = {2, 3, 5, 7, 11, 13, 17, 19, 23})
-    @DisplayName("Asal sayı kontrolü - asal sayılar")
+    @DisplayName("Prime number check - prime number")
     void testPrimeNumbers(int number) {
         assertTrue(calculator.isPrime(number));
     }
 
     @ParameterizedTest
     @ValueSource(ints = {1, 4, 6, 8, 9, 10, 12, 15, 16, 20})
-    @DisplayName("Asal olmayan sayı kontrolü")
+    @DisplayName("Non-prime number check - non-prime number")
     void testNonPrimeNumbers(int number) {
         assertFalse(calculator.isPrime(number));
     }
 
     @Test
-    @DisplayName("Negatif sayılar asal değildir")
+    @DisplayName("Negative number check - not prime")
     void testNegativeNumbersNotPrime() {
         assertFalse(calculator.isPrime(-5));
         assertFalse(calculator.isPrime(-2));
     }
 
     @Test
-    @DisplayName("Edge case testleri")
+    @DisplayName("Edge case testing")
     void testEdgeCases() {
         // Büyük sayılarla işlemler
         assertEquals(1000000.0, calculator.add(999999.0, 1.0));
@@ -205,7 +205,7 @@ class CalculatorTest {
     }
 
     @Test
-    @DisplayName("Kombinasyon testleri")
+    @DisplayName("Combined operations testing")
     void testCombinedOperations() {
         // (5 + 3) * 2 = 16
         double result1 = calculator.multiply(calculator.add(5.0, 3.0), 2.0);

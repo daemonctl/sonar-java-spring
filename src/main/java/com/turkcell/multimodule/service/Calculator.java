@@ -22,7 +22,7 @@ public class Calculator {
      */
     public double divide(double a, double b) {
         if (b == 0) {
-            throw new IllegalArgumentException("Sıfıra bölme hatası!");
+            throw new IllegalArgumentException("Zero divisation error!");
         }
         return a / b;
     }
@@ -36,7 +36,7 @@ public class Calculator {
      */
     public double sqrt(double a) {
         if (a < 0) {
-            throw new IllegalArgumentException("Negatif sayının karekökü alınamaz!");
+            throw new IllegalArgumentException("Negatif number cannot be square rooted!");
         }
         return Math.sqrt(a);
     }
@@ -50,7 +50,7 @@ public class Calculator {
      */
     public long factorial(int n) {
         if (n < 0) {
-            throw new IllegalArgumentException("Negatif sayının faktöriyeli hesaplanamaz!");
+            throw new IllegalArgumentException("Negatif number cannot have a factorial!");
         }
         if (n == 0 || n == 1) {
             return 1;
